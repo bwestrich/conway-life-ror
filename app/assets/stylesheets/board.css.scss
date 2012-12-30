@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// note: code below here up to the ending tag is an attemp to stylize the debug pane. Did not work. 
+// also, for some reason the import statement below did not work. 
 //@import "bootstrap";
 
 /* mixins, variables, etc. */
@@ -24,3 +26,4 @@ $grayMediumLight: #eaeaea;
   margin-top: 45px;
   @include box_sizing;
 }
+// end of code added to stylize debug pane. 
