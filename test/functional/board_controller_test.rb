@@ -1,4 +1,4 @@
-require 'test_helper'
+require '../test_helper'
 
 class BoardControllerTest < ActionController::TestCase
   test "should get blank" do
@@ -10,5 +10,10 @@ class BoardControllerTest < ActionController::TestCase
     get :start
     assert_response :success
   end
+
+  test "translate board to html" do
+  	c = BoardController.new
+  	assert_equals "a<br>b" c.to_html("a\nb")
+  end 
 
 end
