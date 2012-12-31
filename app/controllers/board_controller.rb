@@ -10,7 +10,9 @@ class BoardController < ApplicationController
 	@board_to_html = to_html(@board.to_s)
   end
 
-  def start
+  def evolve
+  	@board.evolve
+	@board_to_html = to_html(@board.to_s)
   end
 
   def to_html string

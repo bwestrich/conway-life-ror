@@ -1,7 +1,7 @@
 Ror::Application.routes.draw do
   get "board/blank"
 
-  get "board/start"
+  get "board/evolve"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
