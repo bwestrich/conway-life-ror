@@ -1,0 +1,29 @@
+<%= form_for(@board2) do |f| %>
+  <% if @board2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@board2.errors.count, "error") %> prohibited this board2 from being saved:</h2>
+
+      <ul>
+      <% @board2.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nrows %><br />
+    <%= f.text_field :nrows %>
+  </div>
+  <div class="field">
+    <%= f.label :ncolumns %><br />
+    <%= f.text_field :ncolumns %>
+  </div>
+  <div class="field">
+    <%= f.label :percentLive %><br />
+    <%= f.text_field :percentLive %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

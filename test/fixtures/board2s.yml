@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nrows: MyString
+  ncolumns: MyString
+  percentLive: MyString
+
+two:
+  nrows: MyString
+  ncolumns: MyString
+  percentLive: MyString

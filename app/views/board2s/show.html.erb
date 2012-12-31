@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nrows:</b>
+  <%= @board2.nrows %>
+</p>
+
+<p>
+  <b>Ncolumns:</b>
+  <%= @board2.ncolumns %>
+</p>
+
+<p>
+  <b>Percentlive:</b>
+  <%= @board2.percentLive %>
+</p>
+
+<%= @board2.board %> 
+
+
+<%= link_to 'Edit', edit_board2_path(@board2) %> |
+<%= link_to 'Back', board2s_path %>
+
+<!-- initial hack of links -->
+    <table>
+    	<tr>
+			<td>
+			    <form action="/board2s/1">
+			    	<input type="submit" value="Restart Game" />
+			    </form>
+    		</td>
+    		<td>
+			    <form action="/board2s/1">
+			    	<input type="submit" value="Evolve" onSuccess="updateBoard"/>
+			    </form>
+    		</td>
+    	</tr>
+    </table>

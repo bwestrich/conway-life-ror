@@ -1,0 +1,36 @@
+<h1>board2s</h1>
+
+<%= content_tag "div", id: "board2s", data: {board2s: Board2.limit(10)} do %>
+  Loading board2s...
+<% end %>
+
+<%= javascript_tag do %>
+  window.productsURL = "<%j @products_url %>";
+  window.board2s = <%=raw Board2.limit(10).to_json %>;
+<% end %>
+
+<table>
+  <tr>
+    <th>Nrows</th>
+    <th>Ncolumns</th>
+    <th>Percent live</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @board2s.each do |board2| %>
+  <tr>
+    <td><%= board2.nrows %></td>
+    <td><%= board2.ncolumns %></td>
+    <td><%= board2.percentLive %></td>
+    <td><%= link_to 'Show', board2 %></td>
+    <td><%= link_to 'Edit', edit_board2_path(board2) %></td>
+    <td><%= link_to 'Destroy', board2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Board2', new_board2_path %>

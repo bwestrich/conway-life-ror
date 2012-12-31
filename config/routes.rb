@@ -1,4 +1,7 @@
 Ror::Application.routes.draw do
+  resources :board2s
+
+
   resources :blog_posts
 
 
