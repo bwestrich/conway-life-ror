@@ -1,4 +1,7 @@
 Ror::Application.routes.draw do
+  resources :blog_posts
+
+
   get "board/new"
   # ?? match "board" => "board/new"
   get "board/evolve"
