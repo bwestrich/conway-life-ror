@@ -5,6 +5,14 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+<!-- todo: move this script to somewhere in assets/javascripts --> 
+<script>
+  function updateBoard() {
+    alert('hola que tal?')
+  }
+</script>
+
 </head>
  <body onload="updateBoard()">
     <div class="container">
