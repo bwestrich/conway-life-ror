@@ -1,6 +1,6 @@
 Ror::Application.routes.draw do
-  get "board/blank"
-
+  get "board/new"
+  # ?? match "board" => "board/new"
   get "board/evolve"
 
   # The priority is based upon order of creation:

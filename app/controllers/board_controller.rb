@@ -3,25 +3,33 @@
 class BoardController < ApplicationController
 
   def initialize 
-    @board = Board.new :nrows => 10, :ncolumns => 10
+  	getBoard
   end 
 
-  def blank
-	@board_to_html = to_html(@board.to_s)
+  def new
+  	clearBoard
+  	getBoard
   end
 
   def evolve
   	@board.evolve
-	@board_to_html = to_html(@board.to_s)
   end
 
-  def to_html string
-  	html = string
-  	html.gsub!("\n", "<br>")
-  	#html.gsub!("0", " ")
-  	#html.gsub!("1", ".")
-  	puts html
-  	return html
-  	#board.to_s.gsub("\n", "<br>")
+#below here are utility methods  
+
+  def getBoard
+  	#@board = session[:board]
+  	@board = $board
+  	if (@board == nil) then 
+       puts "initializing board controller"
+ 	   @board = Board.new :nrows => 20, :ncolumns => 80
+ 	   #session[:board] = @board
+ 	   $board = @board
+  	end 
   end 
+
+  def clearBoard
+  	$board = nil
+  end 
+
 end

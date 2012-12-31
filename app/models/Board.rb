@@ -1,5 +1,5 @@
 class Board 
-attr :cells, :nrows, :ncolumns
+attr :cells, :nrows, :ncolumns, :ngenerations
 
 def initialize hash 
 	zerosAndOnesArray = hash[:zerosAndOnesArray]
@@ -31,10 +31,11 @@ def finalInit cells
 	@cells = cells
 	@nrows = cells.length
 	@ncolumns = cells[0].length
+	@ngenerations = 0
 end
 
 def initRandom nrows, ncolumns
-	percentAlive = 42
+	percentAlive = 62
 	newCells = []
 	(0..nrows - 1).each do |currentRow|
 		newRow = []
@@ -96,6 +97,15 @@ def to_s
 	return result
 end
 
+def to_html 
+	html = to_s
+	html.gsub!("\n", "<br>")
+	html.gsub!("0", "0")
+	html.gsub!("1", "8")
+	#puts html
+	return html
+end 
+
 def evolve
 	newCells = []
 	(0..@nrows - 1).each do |currentRow|
@@ -110,6 +120,7 @@ def evolve
 	end
 	#puts "evolved board with #{newCells.length} rows and #{newCells[0].length} columns."
 	@cells = newCells
+	@ngenerations += 1
 end
 
 end 

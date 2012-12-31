@@ -18,14 +18,21 @@ class BoardTestEvolve < Test::Unit::TestCase
     	puts "Second generation = \n#{@board}"
     end   
     should "have correct descendants" do
-    	evolve(@board, 2, 6)
-    end   
+    	evolve(@board, 2, 3)
+    end  
+begin    
+    should "count generations" do
+      assert_equal 0, @board.ngenerations
+      @board.evolve
+      assert_equal 1, @board.ngenerations 
+    end 
+end     
   end 
 
   context "10x10 random cell" do
   	should "not die for a while" do
   		board = Board.new :nrows => 10, :ncolumns => 10
-  		evolve(board, 1, 10)
+  		evolve(board, 1, 4)
   	end 
 
   end 

@@ -1,12 +1,29 @@
     Conway's Game of Life<p>
     Written at Code Retreat Minneapolis, December 8, 2012.
-    Written by Brian Westrich (bw@mcwest.com), with contributions from Mike Calvo (mike@citronellasoftware.com).<br>
+    Written by Brian Westrich (bw@mcwest.com), with contributions from Mike Calvo (mike@citronellasoftware.com).
     For more info, see github.org/bwestrich/conway-life-ror<br> 
     <p>
 
-    <%= raw @board_to_html %>
+    <!-- -->
+    <%= raw @board.to_html %>
+	<!-- -->
+	<div id="board"></div>
 
-    <form action="/board/evolve">
-    	<input type="submit" value="Evolve" />
-    </form>
+    <p>Number of generations: <%= @board.ngenerations %>
+
+    <table>
+    	<tr>
+			<td>
+			    <form action="/board/new">
+			    	<input type="submit" value="New Game" />
+			    </form>
+    		</td>
+    		<td>
+			    <form action="/board/evolve">
+			    	<input type="submit" value="Evolve" onSuccess="updateBoard"/>
+			    </form>
+    		</td>
+    	</tr>
+    </table>
+
 
