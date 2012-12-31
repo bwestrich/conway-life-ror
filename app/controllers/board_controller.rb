@@ -1,9 +1,13 @@
 #require '../models/board'
 
 class BoardController < ApplicationController
+
+  def initialize 
+    @board = Board.new :nrows => 10, :ncolumns => 10
+  end 
+
   def blank
-	board = Board.new :nrows => 10, :ncolumns => 10
-	@board_to_html = to_html(board.to_s)
+	@board_to_html = to_html(@board.to_s)
   end
 
   def start
