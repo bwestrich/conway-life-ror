@@ -1,4 +1,4 @@
-# Ruby on Rails Implementation of Conways Game of Life
+# Ruby on Rails Implementation of Conway's Game of Life
 
 by [Brian Westrich](http://mcwest.com/).
 
