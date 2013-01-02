@@ -12,18 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nrows %><br />
+    Number of rows<br />
     <%= f.text_field :nrows %>
   </div>
   <div class="field">
-    <%= f.label :ncolumns %><br />
+    Number of columns<br />
     <%= f.text_field :ncolumns %>
   </div>
   <div class="field">
-    <%= f.label :percentLive %><br />
+    Percent of cells that are initially alive<br />
     <%= f.text_field :percentLive %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>

@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <%= content_tag "div", id: "board2", data: {board2: @board2} do %>
-  Loading board2...
+  Loading board...
 <% end %>
 
 <p>
-  <b>Nrows:</b>
+  <b>Number of rows:</b>
   <%= @board2.nrows %>
 </p>
 
 <p>
-  <b>Ncolumns:</b>
+  <b>Number of columns:</b>
   <%= @board2.ncolumns %>
 </p>
 
 <p>
-  <b>Percent live:</b>
+  <b>Percent initially live:</b>
   <%= @board2.percentLive %>
 </p>
 

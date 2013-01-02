@@ -4,9 +4,7 @@ class Board2 < ActiveRecord::Base
   def board
   	#puts "in board(), self attributes are nrows=#{self.nrows}, ncolumns=#{self.ncolumns}"
   	#puts "in board(),  attributes are nrows=#{@nrows}, ncolumns=#{@ncolumns}"
-  	@nrows = 14 if @nrows == nil
-  	@ncolumns = 35 if @ncolumns == nil
-    return Board.new :ncolumns => @ncolumns, :nrows => @nrows 
+    return Board.new :ncolumns => self.ncolumns, :nrows => self.nrows, :percentInitiallyAlive => self.percentLive
   end 
 
 end

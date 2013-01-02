@@ -1,15 +1,24 @@
 class Board 
-attr :cells, :nrows, :ncolumns, :ngenerations
+attr :cells, :nrows, :ncolumns, :ngenerations, :percentInitiallyAlive
 
 def initialize hash 
 	zerosAndOnesArray = hash[:zerosAndOnesArray]
-	nrows = hash[:nrows]
-	ncolumns = hash[:ncolumns]
-	#puts "\nzerosAndOnesArray=#{zerosAndOnesArray}, nrows=#{nrows}, ncolumns=#{ncolumns}"
 	if (zerosAndOnesArray != nil)
+		#puts "\ninitializingBoard, zerosOnes=#{zerosAndOnesArray}, nrows=#{nrows}, ncolumns=#{ncolumns}"
 		initZerosAndOnesArray zerosAndOnesArray
 	else 
-		initRandom nrows, ncolumns
+		nrows = hash[:nrows]
+		nrows = 1 if nrows == "MyString"
+		nrows = Integer(nrows)
+		ncolumns = hash[:ncolumns]
+		ncolumns = 1 if ncolumns == "MyString"
+		ncolumns = Integer(ncolumns)
+		percentInitiallyAlive = hash[:percentInitiallyAlive]
+		percentInitiallyAlive = 42 if percentInitiallyAlive == nil
+		percentInitiallyAlive = 42 if percentInitiallyAlive == "MyString"	
+		percentInitiallyAlive = Integer(percentInitiallyAlive)
+		#puts "\ninitializingBoard, zerosOnes=#{zerosAndOnesArray}, nrows=#{nrows}, ncolumns=#{ncolumns}"
+		initRandom nrows, ncolumns, percentInitiallyAlive
 	end 
 end 
 
@@ -34,15 +43,14 @@ def finalInit cells
 	@ngenerations = 0
 end
 
-def initRandom nrows, ncolumns
-	percentAlive = 62
+def initRandom nrows, ncolumns, percentInitiallyAlive
 	newCells = []
 	(0..nrows - 1).each do |currentRow|
 		newRow = []
 		(0..ncolumns - 1).each do |currentColumn|
 			newCell = Cell.new
 			randomNumber = 1 + rand(100)
-			newCell.alive=true if randomNumber <= percentAlive
+			newCell.alive=true if randomNumber <= percentInitiallyAlive
 			newRow << newCell
 		end
 		newCells << newRow
