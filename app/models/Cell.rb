@@ -1,6 +1,6 @@
-class Cell
-	attr :alive, true
-	
+class Cell  
+	attr_accessor :alive
+
 	def initialize
 		@alive = false
 	end 
@@ -33,4 +33,5 @@ class Cell
 			"0"
 		end
 	end
+
 end 
