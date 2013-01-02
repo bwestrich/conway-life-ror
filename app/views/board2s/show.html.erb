@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<%= content_tag "div", id: "board2", data: {board2: @board2} do %>
+  Loading board2...
+<% end %>
+
 <p>
   <b>Nrows:</b>
   <%= @board2.nrows %>
@@ -11,28 +15,21 @@
 </p>
 
 <p>
-  <b>Percentlive:</b>
+  <b>Percent live:</b>
   <%= @board2.percentLive %>
 </p>
 
-<%= @board2.board %> 
+<p>
+	<%=raw $board.to_html %> 
+</p>
 
+<p>
+	Number of generations: <%= $board.ngenerations %>
+</p>
 
 <%= link_to 'Edit', edit_board2_path(@board2) %> |
-<%= link_to 'Back', board2s_path %>
+<%= link_to 'Back', board2s_path %> | 
+<%= link_to 'Restart Game', "/board2s/#{@board2.id}" %> |
+<%= link_to 'Evolve', "/board2s/#{@board2.id}?evolve=true" %>
 
-<!-- initial hack of links -->
-    <table>
-    	<tr>
-			<td>
-			    <form action="/board2s/1">
-			    	<input type="submit" value="Restart Game" />
-			    </form>
-    		</td>
-    		<td>
-			    <form action="/board2s/1">
-			    	<input type="submit" value="Evolve" onSuccess="updateBoard"/>
-			    </form>
-    		</td>
-    	</tr>
-    </table>
+    		

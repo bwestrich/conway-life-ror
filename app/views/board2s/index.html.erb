@@ -1,9 +1,5 @@
 <h1>board2s</h1>
 
-<%= content_tag "div", id: "board2s", data: {board2s: Board2.limit(10)} do %>
-  Loading board2s...
-<% end %>
-
 <%= javascript_tag do %>
   window.productsURL = "<%j @products_url %>";
   window.board2s = <%=raw Board2.limit(10).to_json %>;

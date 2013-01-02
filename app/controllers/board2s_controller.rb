@@ -15,6 +15,13 @@ class Board2sController < ApplicationController
   # GET /board2s/1.json
   def show
     @board2 = Board2.find(params[:id])
+    if params[:evolve] == nil then
+      #puts "not evolving"
+      $board = @board2.board
+    else
+      #puts "evolving"
+      $board.evolve
+    end 
 
     respond_to do |format|
       format.html # show.html.erb
