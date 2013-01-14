@@ -3,7 +3,7 @@
 by [Brian Westrich](http://mcwest.com/).
 
 Status of implemention: 
-  functional but ugly
+  logically correct, but only works in single-user mode and has ugly UI
   
 Future hopes: 
   
