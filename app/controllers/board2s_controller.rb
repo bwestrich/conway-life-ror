@@ -20,7 +20,9 @@ class Board2sController < ApplicationController
       $board = @board2.board
     else
       #puts "evolving"
-      $board.evolve
+      #(1..10).each do ||
+        $board.evolve
+      #end
     end 
 
     respond_to do |format|
