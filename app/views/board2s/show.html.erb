@@ -31,5 +31,12 @@
 <%= link_to 'Back', board2s_path %> | 
 <%= link_to 'Restart Game', "/board2s/#{@board2.id}" %> |
 <%= link_to 'Evolve', "/board2s/#{@board2.id}?evolve=true" %>
+<a href='#' onclick='alert("Inline Javscript")'>JavaScript</a>
+<a href='#'>unobtrusive js</a>
+<script>
+$('a').bind('click', function() {
+    alert('Unobtrusive!');
+}
+</script>
 
     		
