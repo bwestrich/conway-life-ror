@@ -12,6 +12,6 @@ Future hopes:
     
   update game boards using JavaScript (so are more visually pleasing)
   
-  add an "auto-evolve" (currently have to click a link for each evolultion)
+  add an "auto-evolve" (currently have to click a link for each evolution)
   
   improve game performance by using AJAX
