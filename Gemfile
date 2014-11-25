@@ -5,8 +5,6 @@ ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.16.1'
 gem 'rails', '4.1.8'
 gem 'protected_attributes'
 
-#heroku
-gem "foreman"
 
 
 # Bundle edge Rails instead:
@@ -44,8 +42,18 @@ gem 'jquery-rails', '2.0.2'
 # To use debugger
 # gem 'debugger'
 
+
+group :development do
+  #gem 'sqlite3', '1.3.5'
+end
+
 group :production do
-  gem 'pg'
+
+#heroku
+  gem "foreman"
+  gem 'activerecord-jdbc-adapter'
+  gem 'activerecord-jdbcpostgresql-adapter'
+  gem 'jdbc-postgres'
   gem "rails_12factor"
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"
