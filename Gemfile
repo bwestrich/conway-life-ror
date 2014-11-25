@@ -51,6 +51,7 @@ group :production do
 
 #heroku
   gem "foreman"
+  #added next three lines per http://honoluluhacker.com/2011/07/22/migrating-my-herokupostgres-project-to-jruby/
   gem 'activerecord-jdbc-adapter'
   gem 'activerecord-jdbcpostgresql-adapter'
   gem 'jdbc-postgres'
