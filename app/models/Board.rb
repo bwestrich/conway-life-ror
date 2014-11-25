@@ -1,6 +1,10 @@
 class Board 
 attr :cells, :nrows, :ncolumns, :ngenerations, :percentInitiallyAlive
 
+def as_json(options={})
+	super(:only => [:percentLive])
+end
+
 def initialize hash 
 	zerosAndOnesArray = hash[:zerosAndOnesArray]
 	if (zerosAndOnesArray != nil)
@@ -20,7 +24,7 @@ def initialize hash
 		#puts "\ninitializingBoard, zerosOnes=#{zerosAndOnesArray}, nrows=#{nrows}, ncolumns=#{ncolumns}"
 		initRandom nrows, ncolumns, percentInitiallyAlive
 	end 
-end 
+end
 
 def initZerosAndOnesArray zerosAndOnesArray
 	cells = []

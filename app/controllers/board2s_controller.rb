@@ -2,13 +2,14 @@ class Board2sController < ApplicationController
   # GET /board2s
   # GET /board2s.json
   def index
-    @products_url = "asdfasdfasdfsdfa"
-    @board2s = Board2.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @board2s }
-    end
+    render :json => Board2.all
+    # @products_url = "asdfasdfasdfsdfa"
+    # @board2s = Board2.all
+    #
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @board2s }
+    # end
   end
 
   # GET /board2s/1
