@@ -1,24 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '4.1.8'
+gem 'protected_attributes'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activerecord-jdbcsqlite3-adapter'
 
-gem 'jruby-openssl'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.5'
-  gem 'coffee-rails', '3.2.2'
+  gem 'sass-rails',   '5.0.0.beta1'
+  gem 'coffee-rails', '4.0.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyrhino'
+  #gem 'therubyrhino'
 
-  gem 'uglifier', '1.2.3'
+  #gem 'uglifier', '1.2.3'
 end
 
 gem 'jquery-rails', '2.0.2'
