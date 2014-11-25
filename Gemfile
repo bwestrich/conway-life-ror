@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 gem 'protected_attributes'
 
+#heroku
+gem "foreman"
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -39,5 +43,8 @@ gem 'jquery-rails', '2.0.2'
 # gem 'debugger'
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg'
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
 end
